@@ -1,2 +1,2 @@
 # spring-solutions
-Spring project example.
+Spring solutions base on Java project.
