@@ -1,2 +1,2 @@
-# spring-examples
-Spring project learning example.
+# spring-solutions
+Spring project example.
