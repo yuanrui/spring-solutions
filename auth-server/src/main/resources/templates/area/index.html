@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="shared/layout :: common_header(~{::title},~{::link},~{})">
-    <title>系统登录 - 统一身份认证系统</title>
+<head th:replace="shared/layout :: common_header(~{::title},~{::link})">
+    <title>登录测试</title>
     <link rel="stylesheet" th:href="@{/css/auth-login.css}">
 </head>
 <body>
 <div class="m-login-bg">
     <div class="m-login">
-        <h3>统一身份认证系统登录</h3>
+        <h3>统一身份认证登录系统</h3>
         <div class="m-login-warp">
-            <form class="layui-form" method="post" action="/login">
+            <form class="layui-form" method="post">
                 <div class="layui-form-item">
                     <input type="text" name="user" required lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input" />
                 </div>
                 <div class="layui-form-item">
-                    <input type="password" name="password" required lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input" />
+                    <input type="password" name="pwd" required lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input" />
                 </div>
                 <!--
                 <div class="layui-form-item hidden">
@@ -36,7 +36,7 @@
                 </div>
             </form>
         </div>
-        <p class="copyright">Copyright &copy; Banana [[${#dates.format(new java.util.Date().getTime(), 'yyyy')}]] </p>
+        <p class="copyright">Copyright &copy; Banana @DateTime.Now.Year </p>
     </div>
 </div>
 </body>

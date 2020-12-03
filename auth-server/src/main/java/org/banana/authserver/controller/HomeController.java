@@ -40,9 +40,9 @@ public class HomeController {
 
     @PostMapping("/login")
     public String login(LoginModel loginModel, Model model, HttpSession session) {
-        if(!loginModel.getName().isEmpty()  && !loginModel.getPassword().isEmpty()){
+        if(!loginModel.getUser().isEmpty()  && !loginModel.getPassword().isEmpty()){
             UserModel userModel = new UserModel();
-            userModel.setName(loginModel.getName());
+            userModel.setName(loginModel.getUser());
             userModel.setRealName("管理员");
 
             session.setAttribute(UserModel.USER_SESSION, userModel);
@@ -67,10 +67,15 @@ public class HomeController {
         return "hello";
     }
 
-
     @AllowAnonymous
     @GetMapping("/test")
     public String test(){
         return "test";
+    }
+
+    @AllowAnonymous
+    @GetMapping("/area/index")
+    public String areaIndex(){
+        return "area/index";
     }
 }

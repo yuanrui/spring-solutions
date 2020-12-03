@@ -7,6 +7,6 @@ spring:
   jpa:
     show-sql: true
   thymeleaf:
-    cache=false:
+    cache:false
 server:
   port: 15080

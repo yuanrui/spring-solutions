@@ -1,11 +1,76 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Index</title>
+<head th:replace="shared/layout :: common_header(~{::title},~{::link}, ~{::script})">
+    <title>系统首页 - 统一身份认证系统</title>
+    <link rel="stylesheet" th:href="@{/css/auth-index.css}">
+    <script th:src="@{/js/index.js}"></script>
 </head>
 <body>
-Hello [[${user}]]
-<a href="/logout">退出</a>
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header au-index layui-bg-blue">
+        <a class="logo" href="/">
+            <img th:src="@{/images/index/logo_64x64.png}" alt="统一身份认证系统" />
+        </a>
+        <div class="title">
+            <h2>统一身份认证系统</h2>
+        </div>
+        <ul class="layui-nav layui-bg-blue au-menu">
+            <li class="layui-nav-item hidden">
+                <a lay-href="/AppInfo/Release">
+                    <i class="layui-icon layui-icon-release"></i>
+                    <span>程序发布</span>
+                </a>
+            </li>
+            <li class="layui-nav-item layui-this">
+                <a lay-href="/AppInfo/Index">
+                    <i class="layui-icon layui-icon-app"></i>
+                    <span>程序管理</span>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a lay-href="/AreaInfo/Index">
+                    <i class="layui-icon layui-icon-location"></i>
+                    <span>区域配置</span>
+                </a>
+            </li>
+
+            <li class="layui-nav-item">
+                <a lay-href="/Home/LogList">
+                    <i class="layui-icon layui-icon-log"></i>
+                    <span>日志查询</span>
+                </a>
+            </li>
+            <li class="layui-nav-item">
+                <a lay-href="/Server/Index">
+                    <i class="layui-icon layui-icon-chart-screen"></i>
+                    <span>客户端</span>
+                </a>
+            </li>
+            <li class="layui-nav-item layui-hide">
+                <a lay-href="/Server/Connector">
+                    <i class="layui-icon layui-icon-link"></i>
+                    <span>实时连接</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="layui-nav layui-bg-blue au-profile">
+            <li class="layui-nav-item pull-right">
+                <a href="javascript:;">[[${user}]]</a>
+                <dl class="layui-nav-child">
+                    <dd class="layui-hide"><a href="javascript:;" onclick="showTool('/Tool/Index')">工具</a></dd>
+                    <dd><a href="/logout">退出</a></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+    <div class="layui-body">
+        <iframe id="mainFrame" src="" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div class="layui-footer layui-bg-blue">
+        <div class="layui-main">
+            Copyright &copy; Banana [[${#dates.format(new java.util.Date().getTime(), 'yyyy')}]]
+        </div>
+    </div>
+</div>
 </body>
 </html>

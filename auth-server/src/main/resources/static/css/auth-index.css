@@ -1,0 +1,78 @@
+.layui-card
+{
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    border-radius: 2px;
+}
+.au-index{ border-bottom: none; }
+.au-index .logo{ position: absolute; left: 0; top: 5px;left: 20px; }
+.au-index .logo img{width: 70px; height: 70px;}
+.au-index .title { position: absolute; left: 0; top: 25px; left:100px; cursor:default; }
+.au-index .au-menu{ left: 300px; width:600px; }
+.au-index .au-profile{ position: absolute; top:0px; right:0px; }
+
+.layui-header, .layui-nav, .layui-nav-item {
+    height:80px;
+}
+.au-menu .layui-nav-item a {
+    padding:0px 20px;
+    height:80px;
+    cursor:pointer;
+}
+.au-menu .layui-nav-item a i {
+    width:30px;
+    height:30px;
+    display:block;
+    font-size: 30px;
+    margin:0 auto;
+    text-align:center;
+}
+.au-menu .layui-nav-item a span {
+    width:60px;
+    height:30px;
+    display:block;
+    text-align:center;
+}
+.au-profile .layui-nav-item{
+    line-height:40px;
+}
+
+.au-profile .layui-nav-item a{
+    height:30px;
+    margin-top:40px;
+    text-align:center;
+}
+.au-profile .layui-nav-item a .layui-nav-more{
+    top:75%
+}
+.au-profile .layui-nav-item .layui-nav-child a{
+    margin-top:0px;
+}
+.layui-header .layui-nav-child{
+    top:80px;
+}
+.layui-header .layui-nav-child a{
+    padding:0px 20px;
+}
+.layui-layout-admin .layui-body
+{
+    top:80px;
+    left:0px;
+    bottom:30px;
+    overflow:hidden;
+}
+.layui-layout-admin .layui-footer{
+    bottom:0px;
+    left:0px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+}
+.layui-layout-admin .layui-body #mainFrame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom:10px;
+}
