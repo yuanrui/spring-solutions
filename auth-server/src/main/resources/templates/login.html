@@ -9,9 +9,14 @@
     <div class="m-login">
         <h3>统一身份认证系统登录</h3>
         <div class="m-login-warp">
+            <div th:if="${param.error}">
+                用户名或密码错误</div>
+            <div th:if="${param.logout}">
+                您已经退出系统</div>
+
             <form class="layui-form" method="post" action="/login">
                 <div class="layui-form-item">
-                    <input type="text" name="user" required lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input" />
+                    <input type="text" name="username" required lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input" />
                 </div>
                 <div class="layui-form-item">
                     <input type="password" name="password" required lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input" />

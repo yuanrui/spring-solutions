@@ -15,11 +15,12 @@ public class WebAppConfigurer implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         // 可添加多个
-        registry.addInterceptor(new CheckAuthInterceptor()).addPathPatterns("/**")
-                .excludePathPatterns("/login")
-                .excludePathPatterns("/logout")
-                .excludePathPatterns(Arrays.asList("/favicon.ico","/css/**", "/images/**", "/js/**", "/layui/**"))
-        ;
+//        registry.addInterceptor(new CheckAuthInterceptor())
+//                .addPathPatterns("/**")
+//                .excludePathPatterns("/login")
+//                .excludePathPatterns("/logout")
+//                .excludePathPatterns(Arrays.asList("/favicon.ico","/css/**", "/images/**", "/js/**", "/layui/**"))
+//        ;
     }
 
 }

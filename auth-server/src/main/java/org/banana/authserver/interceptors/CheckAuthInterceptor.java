@@ -1,7 +1,7 @@
 package org.banana.authserver.interceptors;
 
 import org.banana.authserver.annotation.AllowAnonymous;
-import org.banana.authserver.annotation.AllowAuth;
+import org.banana.authserver.annotation.AllowAuthenticated;
 import org.banana.authserver.domain.UserModel;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -22,10 +22,10 @@ public class CheckAuthInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         HandlerMethod handlerMethod = (HandlerMethod) handler;
         Method method = handlerMethod.getMethod();
-        AllowAuth allowAuth = method.getAnnotation(AllowAuth.class);
+        AllowAuthenticated allowAuthenticated = method.getAnnotation(AllowAuthenticated.class);
         AllowAnonymous allowAnonymous = method.getAnnotation(AllowAnonymous.class);
 
-        System.out.println("AllowAnonymous:" + (allowAnonymous != null) + " AllowAuth:" + (allowAuth != null));
+        System.out.println("AllowAnonymous:" + (allowAnonymous != null) + " AllowAuthenticated:" + (allowAuthenticated != null));
         HttpSession session = request.getSession();
         UserModel userModel = (UserModel) session.getAttribute(USER_SESSION);
 
@@ -33,7 +33,7 @@ public class CheckAuthInterceptor extends HandlerInterceptorAdapter {
             return true;
         }
 
-        if(allowAuth != null && userModel != null){
+        if(allowAuthenticated != null && userModel != null){
             return true;
         }
 
