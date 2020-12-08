@@ -9,13 +9,6 @@ import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 public class AuthServerApplication {
 
     public static void main(String[] args) {
-        User user = (User) User.withDefaultPasswordEncoder()
-                .username("user")
-                .password("password")
-                .roles("user")
-                .build();
-        System.out.println(user.getPassword());
-
         SpringApplication.run(AuthServerApplication.class, args);
     }
 

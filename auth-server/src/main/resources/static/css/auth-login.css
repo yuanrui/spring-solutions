@@ -39,6 +39,9 @@ input:-webkit-autofill {
     color: #999;
     padding-top: 10px;
 }
+.m-login .copyright a {
+    color: #999;
+}
 .m-login-warp {
     background: #fff;
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);

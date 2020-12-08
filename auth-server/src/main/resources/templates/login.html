@@ -14,7 +14,7 @@
             <div th:if="${param.logout}">
                 您已经退出系统</div>
 
-            <form class="layui-form" method="post" action="/login">
+            <form class="layui-form" method="post" th:action="@{/login}">
                 <div class="layui-form-item">
                     <input type="text" name="username" required lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input" />
                 </div>
@@ -41,7 +41,7 @@
                 </div>
             </form>
         </div>
-        <p class="copyright">Copyright &copy; Banana [[${#dates.format(new java.util.Date().getTime(), 'yyyy')}]] </p>
+        <p class="copyright">Copyright &copy; <a href="https://github.com/yuanrui/spring-solutions" target="_blank">Banana</a> [[${#dates.format(new java.util.Date().getTime(), 'yyyy')}]]</p>
     </div>
 </div>
 </body>

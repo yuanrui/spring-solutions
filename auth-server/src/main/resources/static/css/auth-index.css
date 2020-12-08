@@ -68,6 +68,9 @@
     line-height:30px;
     text-align:center;
 }
+.layui-layout-admin .layui-footer .copyright a {
+    color: #fff;
+}
 .layui-layout-admin .layui-body #mainFrame {
     position: relative;
     width: 100%;

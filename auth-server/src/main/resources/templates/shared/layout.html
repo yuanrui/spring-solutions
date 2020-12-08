@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
-    <title th:replace="${title}">The awesome application</title>
+    <title th:replace="${title}">统一身份认证系统</title>
 
     <!-- Common styles and scripts -->
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/layui/css/layui.css}">
@@ -34,7 +34,7 @@
     <script src="@{~/static/layui/layui.all.js}"></script>
 </div>
 <div id="copy-section">
-    Copyright &copy; Banana [[${#dates.format(new java.util.Date().getTime(), 'yyyy')}]]
+    Copyright &copy; <a href="https://github.com/yuanrui/spring-solutions" target="_blank">Banana</a> [[${#dates.format(new java.util.Date().getTime(), 'yyyy')}]]
 </div>
 
 </body>

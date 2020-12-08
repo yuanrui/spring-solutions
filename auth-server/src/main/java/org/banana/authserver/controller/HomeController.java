@@ -19,7 +19,7 @@ import java.security.Principal;
 @Controller
 public class HomeController {
 
-    @GetMapping("/index")
+    @GetMapping( value = { "/", "/index"})
     public String index(Model model, HttpSession session, Principal principal) {
         model.addAttribute("test", "123456");
 
