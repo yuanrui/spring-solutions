@@ -23,7 +23,7 @@ public class LoggingFilter implements Filter {
         if(user != null){
             System.out.println("User:" + user.getName() + " uri:" + httpReq.getRequestURI());
         }
-
+        
         System.out.println("LoggingFilter, url:" + httpReq.getRequestURI());
         chain.doFilter(req, resp);
     }

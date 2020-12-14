@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="shared/layout :: common_header(~{::title},~{::link},~{})">
+<head th:replace="shared/layout :: common_header(~{::title},~{::link},~{::script})">
     <title>系统登录 - 统一身份认证系统</title>
     <link rel="stylesheet" th:href="@{/css/auth-login.css}">
+    <script type="text/javascript">
+        var loginMsg = "[[${msg}]]";
+
+        layui.use(['form', 'layedit', 'laydate'], function () {
+            var form = layui.form,
+                layer = layui.layer;
+
+            tryReloadParentPage();
+
+            if (loginMsg != null && loginMsg != ""){
+                layer.msg(loginMsg, { icon: 2, maxWidth: 300 });
+            }
+        });
+
+        function tryReloadParentPage() {
+            try {
+                if (window.top != window.self) {
+                    window.top.location = document.location.href;
+                }
+            } catch (e) {
+
+            }
+        }
+    </script>
 </head>
 <body>
 <div class="m-login-bg">
     <div class="m-login">
         <h3>统一身份认证系统登录</h3>
         <div class="m-login-warp">
-            <div th:if="${param.error}">
-                用户名或密码错误</div>
-            <div th:if="${param.logout}">
-                您已经退出系统</div>
-
+            <!--<div th:if="${param.error}">用户名或密码错误</div>-->
+            <!--<div th:if="${param.logout}">您已经退出系统</div>-->
             <form class="layui-form" method="post" th:action="@{/login}">
                 <div class="layui-form-item">
-                    <input type="text" name="username" required lay-verify="required" placeholder="用户名" autocomplete="off" class="layui-input" />
+                    <input type="text" name="username" required lay-verify="required" placeholder="用户名"
+                           autocomplete="off" class="layui-input"/>
                 </div>
                 <div class="layui-form-item">
-                    <input type="password" name="password" required lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input" />
+                    <input type="password" name="password" required lay-verify="required" placeholder="密码"
+                           autocomplete="off" class="layui-input"/>
                 </div>
                 <!--
                 <div class="layui-form-item hidden">
@@ -41,7 +64,8 @@
                 </div>
             </form>
         </div>
-        <p class="copyright">Copyright &copy; <a href="https://github.com/yuanrui/spring-solutions" target="_blank">Banana</a> [[${#dates.format(new java.util.Date().getTime(), 'yyyy')}]]</p>
+        <p class="copyright">Copyright &copy; <a href="https://github.com/yuanrui/spring-solutions" target="_blank">Banana</a>
+            [[${#dates.format(new java.util.Date().getTime(), 'yyyy')}]]</p>
     </div>
 </div>
 </body>

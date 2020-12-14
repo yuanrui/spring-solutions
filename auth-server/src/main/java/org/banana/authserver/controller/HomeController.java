@@ -4,11 +4,13 @@ import org.banana.authserver.annotation.AllowAnonymous;
 import org.banana.authserver.annotation.AllowAuthenticated;
 import org.banana.authserver.domain.LoginModel;
 import org.banana.authserver.domain.UserModel;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.security.Principal;
 
@@ -35,7 +37,18 @@ public class HomeController {
     }
 
     @GetMapping("/login")
-    public String login() {
+    public String login(Model model, HttpServletRequest request) {
+        String query = request.getQueryString();
+
+        model.addAttribute("msg", "");
+        if (query != null && query.equals("error")){
+            model.addAttribute("msg", "用户名或密码错误");
+        }
+
+        if (query != null && query.equals("logout")){
+            model.addAttribute("msg", "您已经退出系统");
+        }
+
         return "login";
     }
 
