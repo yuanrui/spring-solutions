@@ -2,13 +2,10 @@ package org.banana.authserver.controller;
 
 import org.banana.authserver.annotation.AllowAnonymous;
 import org.banana.authserver.annotation.AllowAuthenticated;
-import org.banana.authserver.domain.LoginModel;
-import org.banana.authserver.domain.UserModel;
-import org.springframework.http.HttpRequest;
+import org.banana.authserver.domain.model.UserModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

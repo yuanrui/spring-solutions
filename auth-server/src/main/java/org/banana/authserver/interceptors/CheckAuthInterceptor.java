@@ -2,7 +2,7 @@ package org.banana.authserver.interceptors;
 
 import org.banana.authserver.annotation.AllowAnonymous;
 import org.banana.authserver.annotation.AllowAuthenticated;
-import org.banana.authserver.domain.UserModel;
+import org.banana.authserver.domain.model.UserModel;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 

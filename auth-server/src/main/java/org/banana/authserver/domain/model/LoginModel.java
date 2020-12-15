@@ -1,4 +1,4 @@
-package org.banana.authserver.domain;
+package org.banana.authserver.domain.model;
 
 /**
  * @author yuanrui@live.cn
